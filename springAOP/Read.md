@@ -30,3 +30,26 @@ public final class LQuan extends Proxy implements IProxyTargetDao
 #### CGLib 动态代理生成的class反编译的
 
 public final class LQuan extends Proxy implements IProxyTargetDao
+
+
+
+### aop的切入点表达式
+execution
+
+within
+
+this
+
+target
+
+@annotation
+
+
+
+
+
+
+
+
+
+

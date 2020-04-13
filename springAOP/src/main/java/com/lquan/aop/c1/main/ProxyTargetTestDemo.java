@@ -30,8 +30,16 @@ public class ProxyTargetTestDemo {
         AnnotationConfigApplicationContext annotationConfigApplicationContext
                 = new AnnotationConfigApplicationContext(AppConfig.class);
         //利用jdk的动态代理来实现
-        ProxyTargetImpl indexDao = annotationConfigApplicationContext.getBean(ProxyTargetImpl.class);
+       // ProxyTargetImpl indexDao = annotationConfigApplicationContext.getBean(ProxyTargetImpl.class);
+
+
+        IProxyTargetDao indexDao = annotationConfigApplicationContext.getBean(IProxyTargetDao.class);
         indexDao.query();
+
+        // annotation的
+        System.out.println("***********annotation的***********");
+        IndexDao indao = annotationConfigApplicationContext.getBean(IndexDao.class);
+        indao.query();
 
         /**
         Class[] interfaces = new Class[]{IProxyTargetDao.class};

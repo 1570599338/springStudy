@@ -17,7 +17,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  **/
 @Configuration
 @ComponentScan("com.lquan.aop.c1")
-@EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableAspectJAutoProxy(proxyTargetClass = false)
 
 public class AppConfig {
 }

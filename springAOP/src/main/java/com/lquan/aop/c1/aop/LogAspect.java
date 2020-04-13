@@ -71,4 +71,20 @@ public class LogAspect {
 
 
 
+    //*******************target*****************************
+    // annotation注解
+    //切点:所有join point的集合
+    @Pointcut("@annotation(com.lquan.aop.c1.annotation.Liu)")
+    public  void PointCutExecAnno(){
+
+    }
+
+
+    // 通知 Advice   织入的位置
+    @Before("PointCutExecAnno()")
+    public void sayAnno(){
+        System.out.println("通知annotation");
+    }
+
+
 }
