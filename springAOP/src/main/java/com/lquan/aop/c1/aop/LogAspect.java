@@ -33,4 +33,42 @@ public class LogAspect {
         System.out.println("通知");
     }
 
+
+
+ //*******************this和target的区别*****************************
+
+    //*******************this*****************************
+
+
+    //切点:所有join point的集合
+    @Pointcut("this(com.lquan.aop.c1.dao.IProxyTargetDao)")
+    public  void PointCutExecthis(){
+
+    }
+
+
+    // 通知 Advice   织入的位置
+    @Before("PointCutExecthis()")
+    public void saythis(){
+        System.out.println("通知this");
+    }
+
+
+
+    //*******************target*****************************
+    //切点:所有join point的集合
+    @Pointcut("target(com.lquan.aop.c1.dao.IProxyTargetDao)")
+    public  void PointCutExectarget(){
+
+    }
+
+
+    // 通知 Advice   织入的位置
+    @Before("PointCutExectarget()")
+    public void saytarget(){
+        System.out.println("通知target");
+    }
+
+
+
 }
