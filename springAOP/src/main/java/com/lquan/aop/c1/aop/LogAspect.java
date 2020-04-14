@@ -83,8 +83,44 @@ public class LogAspect {
     // 通知 Advice   织入的位置
     @Before("PointCutExecAnno()")
     public void sayAnno(){
-        System.out.println("通知annotation");
+        System.out.println("通知annotation ");
     }
+
+
+    //***************************利用CGlib代理非接口实现现类 this和target的区别*************************************
+
+    //*******************this*****************************
+
+
+    //切点:所有join point的集合
+    @Pointcut("this(com.lquan.aop.c1.dao.IndexDao)")
+    public  void PointCutExecthisCGlib(){
+
+    }
+
+
+    // 通知 Advice   织入的位置
+    @Before("PointCutExecthisCGlib()")
+    public void saythisCGlib(){
+        System.out.println("通知thisCGlib");
+    }
+
+
+
+    //*******************target*****************************
+    //切点:所有join point的集合
+    @Pointcut("target(com.lquan.aop.c1.dao.IndexDao)")
+    public  void PointCutExectargetCGlib(){
+
+    }
+
+
+    // 通知 Advice   织入的位置
+    @Before("PointCutExectargetCGlib()")
+    public void saytargetCGlib(){
+        System.out.println("通知targetCGlib");
+    }
+
 
 
 }

@@ -46,10 +46,33 @@ target
 
 
 
+### JoinPoint是干嘛的
+他是Aop的一个连接点，可以通过他获得连接点信息，譬如：她所在的类，她所在target，她所在的代理对象，参数、方法的签名、
 
 
 
+### instrudction 引入
 
 
+### springAop默认情况下是单利的
+
+
+
+## 直接将 @Before("execution(* com.lquan.aop.c2.dao.*.*(..))") 
+
+@Component
+@Aspect
+public class AspectC2Direct {
+
+     * 通知织入连接点
+     */
+    @Before("execution(* com.lquan.aop.c2.dao.*.*(..))")
+    public void say(){
+        System.out.println("通知");
+    }
+}
+
+
+### perthis来实现多例---未成功
 
 

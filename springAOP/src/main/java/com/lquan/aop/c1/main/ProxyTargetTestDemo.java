@@ -37,9 +37,9 @@ public class ProxyTargetTestDemo {
         indexDao.query();
 
         // annotation的
-        System.out.println("***********annotation的***********");
-        IndexDao indao = annotationConfigApplicationContext.getBean(IndexDao.class);
-        indao.query();
+//        System.out.println("***********annotation的***********");
+//        IndexDao indao = annotationConfigApplicationContext.getBean(IndexDao.class);
+//        indao.query();
 
         /**
         Class[] interfaces = new Class[]{IProxyTargetDao.class};

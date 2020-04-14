@@ -3,6 +3,7 @@ package com.lquan.aop.c1.main;/**
  */
 
 import com.lquan.aop.c1.config.AppConfig;
+import com.lquan.aop.c1.dao.IProxyTargetDao;
 import com.lquan.aop.c1.dao.IndexDao;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -20,7 +21,8 @@ public class TestDemo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext
                 = new AnnotationConfigApplicationContext(AppConfig.class);
-        IndexDao indexDao = annotationConfigApplicationContext.getBean(IndexDao.class);
+        //IndexDao indexDao = annotationConfigApplicationContext.getBean(IndexDao.class);
+        IProxyTargetDao indexDao = annotationConfigApplicationContext.getBean(IProxyTargetDao.class);
         indexDao.query();
     }
 }
